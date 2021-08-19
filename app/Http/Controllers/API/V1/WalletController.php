@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API\V1;
 
-use App\Models\API\V1\Delivery;
+use App\Http\Controllers\Controller;
+use App\Models\API\V1\Wallet;
 use Illuminate\Http\Request;
 
-class DeliveryController extends Controller
+class WalletController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class DeliveryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\API\V1\Delivery  $delivery
+     * @param  \App\Models\Wallet  $wallet
      * @return \Illuminate\Http\Response
      */
-    public function show(Delivery $delivery)
+    public function show(Wallet $wallet)
     {
         //
     }
@@ -52,10 +53,10 @@ class DeliveryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\API\V1\Delivery  $delivery
+     * @param  \App\Models\Wallet  $wallet
      * @return \Illuminate\Http\Response
      */
-    public function edit(Delivery $delivery)
+    public function edit(Wallet $wallet)
     {
         //
     }
@@ -64,10 +65,10 @@ class DeliveryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\API\V1\Delivery  $delivery
+     * @param  \App\Models\Wallet  $wallet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Delivery $delivery)
+    public function update(Request $request, Wallet $wallet)
     {
         //
     }
@@ -75,10 +76,10 @@ class DeliveryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\API\V1\Delivery  $delivery
+     * @param  \App\Models\Wallet  $wallet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Delivery $delivery)
+    public function destroy(Wallet $wallet)
     {
         //
     }

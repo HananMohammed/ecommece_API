@@ -39,8 +39,7 @@ interface ProductInterface
     public function destroy($id);
 
     /** Update Product status delivered or not.
-     * @param $id
      * @return json
      */
-    public function updateStatus($request, $id);
+    public function updateStatus($request);
 }

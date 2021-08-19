@@ -28,6 +28,7 @@ class UserRequest extends FormRequest
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|unique:users,email',
             'password' => 'required|string|min:6|confirmed',
+            'wallet_password' => 'required|string|min:6|confirmed',
             'role'  => ['required', 'string', Rule::in(['Client', 'Merchant', 'Driver']),'max:255']
         ];
     }

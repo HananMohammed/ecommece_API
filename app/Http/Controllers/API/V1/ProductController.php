@@ -43,9 +43,9 @@ class ProductController extends Controller
         return $this->productRepository->destroy($id);
     }
 
-    public function updateStatus(Request $request, $id){
+    public function updateStatus(Request $request){
 
-        return $this->productRepository->updateStatus($request, $id);
+        return $this->productRepository->updateStatus($request);
     }
 
 }

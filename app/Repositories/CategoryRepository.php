@@ -21,8 +21,8 @@ class CategoryRepository implements CategoryInterface
     public function index()
     {
         try {
-            $categories =Category::all();
-            return $this->returnData('data', CategoryResource::collection($categories), __('messages.categories'));
+            $categories =Category::paginate(10);
+            return $this->returnData('data', CategoryResource::collection($categories)->response()->getData(true), __('messages.categories'));
         }catch (\Exception $exception){
             return $this->returnError(500, __('errors.server_error'));
         }
@@ -30,6 +30,7 @@ class CategoryRepository implements CategoryInterface
 
     public function store($request)
     {
+
         if (Auth::user()->hasRole('Merchant')){
             try{
                 $model = new Category();
@@ -72,6 +73,7 @@ class CategoryRepository implements CategoryInterface
         if (Auth::user()->hasRole('Merchant')){
             try {
                 $category = Category::find($id);
+
                 if (isset($category)){
                     $products = Product::where('category_id', $id)->get();
                     if (!empty($products)){

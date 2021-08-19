@@ -6,6 +6,7 @@ namespace App\Repositories;
 
 use App\Interfaces\AuthInterface;
 use App\Models\API\V1\User;
+use App\Models\API\V1\Wallet;
 use App\Traits\ResponseTrait;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -21,6 +22,7 @@ class AuthRepository implements AuthInterface
             $user = User::create([
                 'name' => $request->name,
                 'password' =>  Hash::make($request->password),
+                'wallet_password' =>  Hash::make($request->wallet_password),
                 'email' => $request->email,
                 'role' => $request->role
             ]);
@@ -29,6 +31,12 @@ class AuthRepository implements AuthInterface
                 "access_token" => $user->createToken('auth_token')->plainTextToken,
                 'token_type' => 'Bearer',
             ];
+
+            Wallet::create([
+                'user_id' => $user->id,
+                'money'   => 0 ,
+                'transfer_status' => 1,
+            ]);
 
             return $this->returnData('data', $data, __('messages.registered'));
 
@@ -61,6 +69,7 @@ class AuthRepository implements AuthInterface
     {
         try{
             $user =  $request->user();
+            unset($user['wallet_password'], $user['email_verified_at']);
             return $this->returnData('data', $user, __('messages.profile'));
         }catch (\Exception $exception){
             return $this->returnError(500, __('errors.server_error'));

@@ -34,7 +34,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::delete('categories/{id}', 'CategoryController@destroy');
     //products
     Route::post('products', 'ProductController@store');
-    Route::post('product-delivery/{id}', 'ProductController@updateStatus');
+    Route::post('product-delivery', 'ProductController@updateStatus');
     Route::put('products/{id}', 'ProductController@update');
     Route::delete('products/{id}', 'ProductController@destroy');
 

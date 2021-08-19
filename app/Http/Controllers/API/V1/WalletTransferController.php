@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API\V1;
 
-use App\Models\API\V1\Order;
+use App\Http\Controllers\Controller;
+use App\Models\API\V1\WalletTransfer;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class WalletTransferController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\API\V1\Order  $order
+     * @param  \App\Models\WalletTransfer  $walletTransfer
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show(WalletTransfer $walletTransfer)
     {
         //
     }
@@ -52,10 +53,10 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\API\V1\Order  $order
+     * @param  \App\Models\WalletTransfer  $walletTransfer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
+    public function edit(WalletTransfer $walletTransfer)
     {
         //
     }
@@ -64,10 +65,10 @@ class OrderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\API\V1\Order  $order
+     * @param  \App\Models\WalletTransfer  $walletTransfer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, WalletTransfer $walletTransfer)
     {
         //
     }
@@ -75,10 +76,10 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\API\V1\Order  $order
+     * @param  \App\Models\WalletTransfer  $walletTransfer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy(WalletTransfer $walletTransfer)
     {
         //
     }
